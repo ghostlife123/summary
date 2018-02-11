@@ -1,60 +1,60 @@
-padding ÄÚ±ß¾à	²»ÔÊĞíÊ¹ÓÃ¸ºÖµ
+padding å†…è¾¹è·	ä¸å…è®¸ä½¿ç”¨è´Ÿå€¼
 	padding: 10px 5px 15px 20px 
-			 ÉÏ	 ÓÒ	  ÏÂ   ×ó
+			 ä¸Š	 å³	  ä¸‹   å·¦
 	padding: 10px 5px 15px
-			 ÉÏ	  ÓÒ×ó ÏÂ
+			 ä¸Š	  å³å·¦ ä¸‹
 	padding: 10px 5px 
-			 ÉÏÏÂ  ×óÓÒ
+			 ä¸Šä¸‹  å·¦å³
 	padding: 10px
-			 ÉÏÏÂ×óÓÒ
-	jsÓï·¨ object.style.padding="10px 5px"
+			 ä¸Šä¸‹å·¦å³
+	jsè¯­æ³• object.style.padding="10px 5px"
 div 
-
+pull æµ‹è¯•
 jQuery
-	detach()	É¾³ı±»Ñ¡ÖĞÔªËØµÄÎÄ±¾ºÍ×Ó½Úµã ²»»á 								·µ»Ø±»É¾³ıµÄÎÄ±¾
-	remove()	É¾³ı±»Ñ¡ÖĞÔªËØµÄÎÄ±¾ºÍ×Ó½Úµã Í¬Ê±»áÒÆ³ı±»Ñ¡ÔªËØµÄÊı¾İºÍÊÂ¼ş		·µ»Ø±»É¾³ıµÄÎÄ±¾
-	empty()	É¾³ı±»Ñ¡ÖĞÔªËØµÄ×Ó½Úµã
-	append()ºÍhtml()µÄÇø±ğ
-	htmlÊÇÌæ»»£¬¶øappendÊÇ×·¼Ó
+	detach()	åˆ é™¤è¢«é€‰ä¸­å…ƒç´ çš„æ–‡æœ¬å’Œå­èŠ‚ç‚¹ ä¸ä¼š 								è¿”å›è¢«åˆ é™¤çš„æ–‡æœ¬
+	remove()	åˆ é™¤è¢«é€‰ä¸­å…ƒç´ çš„æ–‡æœ¬å’Œå­èŠ‚ç‚¹ åŒæ—¶ä¼šç§»é™¤è¢«é€‰å…ƒç´ çš„æ•°æ®å’Œäº‹ä»¶		è¿”å›è¢«åˆ é™¤çš„æ–‡æœ¬
+	empty()	åˆ é™¤è¢«é€‰ä¸­å…ƒç´ çš„å­èŠ‚ç‚¹
+	append()å’Œhtml()çš„åŒºåˆ«
+	htmlæ˜¯æ›¿æ¢ï¼Œè€Œappendæ˜¯è¿½åŠ 
 javascript
-	ÔËËã·û
+	è¿ç®—ç¬¦
 		typeof:
-		in:¼ì²éÒ»¸ö¶ÔÏóÊôĞÔÊÇ·ñ´æÔÚ
-			if("prop" in someObject ) //someObjecty ÓĞÊôĞÔ'prop'	
-	JavaScript¶ÔÏó
-		Ö§³ÖËÄÖÖ¶ÔÏó:
-			ÄÚ²¿¶ÔÏó:	
-				11´óÄÚÖÃ¶ÔÏó:Array,Boolean,Date,Function,Global,Math,Number,
+		in:æ£€æŸ¥ä¸€ä¸ªå¯¹è±¡å±æ€§æ˜¯å¦å­˜åœ¨
+			if("prop" in someObject ) //someObjecty æœ‰å±æ€§'prop'	
+	JavaScriptå¯¹è±¡
+		æ”¯æŒå››ç§å¯¹è±¡:
+			å†…éƒ¨å¯¹è±¡:	
+				11å¤§å†…ç½®å¯¹è±¡:Array,Boolean,Date,Function,Global,Math,Number,
 							 Object,RegExp,Error,String
 				
 						
 						
-			Éú³ÉµÄ¶ÔÏó,	 
-				´´½¨¶ÔÏó:
-					·½Ê½Ò»:
+			ç”Ÿæˆçš„å¯¹è±¡,	 
+				åˆ›å»ºå¯¹è±¡:
+					æ–¹å¼ä¸€:
 						function user(username,password){
 							this.username=username;
 							this.password=password;
 						}
 						var firstUser=new user("ghost","life")
-					·½Ê½¶ş:
+					æ–¹å¼äºŒ:
 						var user={username:"ghost",password:"life"}
-					·½Ê½Èı:
+					æ–¹å¼ä¸‰:
 						
 						
-			ËŞÖ÷¸ø³öµÄ¶ÔÏó(±ÈÈç:Internet ä¯ÀÀÆ÷ÖĞµÄwindowºÍdocument):
-			ActiveX¶ÔÏó(Íâ²¿×é¼ş):
-		ËùÓĞ¶ÔÏó¶¼Ö§³Öexpando(¿ÉÀ©Õ¹)ÊôĞÔ
+			å®¿ä¸»ç»™å‡ºçš„å¯¹è±¡(æ¯”å¦‚:Internet æµè§ˆå™¨ä¸­çš„windowå’Œdocument):
+			ActiveXå¯¹è±¡(å¤–éƒ¨ç»„ä»¶):
+		æ‰€æœ‰å¯¹è±¡éƒ½æ”¯æŒexpando(å¯æ‰©å±•)å±æ€§
 		
-	undefined:¶ÔÏó²»´æÔÚ,ÉùÃ÷ÁË±äÁ¿µ«´ÓÎ´¸³Öµ
+	undefined:å¯¹è±¡ä¸å­˜åœ¨,å£°æ˜äº†å˜é‡ä½†ä»æœªèµ‹å€¼
 	window.prompt("",x)   
-		ÓÃÓÚÏÔÊ¾¿ÉÌáÊ¾ÓÃ»§ÊäÈëµÄ¶Ô»°¿ò
-		·½·¨·µ»Øx ¼´ÓÃ»§ÊäÈëµÄÄÚÈİ
-	Number(object)	½«¶ÔÏóµÄÖ»×ªÎªÊı×Ö,
-		ÎŞ·¨×ª»»³ÉÊı×Ö,Ôò·µ»ØNaN
-		ÈÕÆÚ¶ÔÏó,·µ»Ø1970Äê1ÔÂ1ÈÕÖÁ½ñµÄºÁÃëÊı
-		²¼¶û¶ÔÏó,·µ»Ø1»òÕß0
-	eval(string)	¿É¼ÆËãÄ³¸ö×Ö·û´®,²¢Ö´ĞĞÆäÖĞµÄJavaScript´úÂë
+		ç”¨äºæ˜¾ç¤ºå¯æç¤ºç”¨æˆ·è¾“å…¥çš„å¯¹è¯æ¡†
+		æ–¹æ³•è¿”å›x å³ç”¨æˆ·è¾“å…¥çš„å†…å®¹
+	Number(object)	å°†å¯¹è±¡çš„åªè½¬ä¸ºæ•°å­—,
+		æ— æ³•è½¬æ¢æˆæ•°å­—,åˆ™è¿”å›NaN
+		æ—¥æœŸå¯¹è±¡,è¿”å›1970å¹´1æœˆ1æ—¥è‡³ä»Šçš„æ¯«ç§’æ•°
+		å¸ƒå°”å¯¹è±¡,è¿”å›1æˆ–è€…0
+	eval(string)	å¯è®¡ç®—æŸä¸ªå­—ç¬¦ä¸²,å¹¶æ‰§è¡Œå…¶ä¸­çš„JavaScriptä»£ç 
 	
 	
 		
@@ -70,10 +70,10 @@ javascript
 <link href="res/simplepop/simplepop.min.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="res/simplepop/simplepop.min.js"></script>
 if(ids == ""){
-	SimplePop.alert("ÄúÎ´Ñ¡ÖĞÈÎºÎĞĞ!!! ",{opacity:0.1});
+	SimplePop.alert("æ‚¨æœªé€‰ä¸­ä»»ä½•è¡Œ!!! ",{opacity:0.1});
 	return;
 }else{
-	SimplePop.confirm("È·ÈÏÉ¾³ıÑ¡ÖĞµÄËùÓĞ¼ÇÂ¼?",{
+	SimplePop.confirm("ç¡®è®¤åˆ é™¤é€‰ä¸­çš„æ‰€æœ‰è®°å½•?",{
 		cancel:function(){
 		},
 		confirm:function(){
@@ -82,7 +82,7 @@ if(ids == ""){
 		opacity:0.1
 	});
 }
-eWebEdit±à¼­Æ÷Í¨ÓÃ°æ±¾¼¤»îÂë
+eWebEditç¼–è¾‘å™¨é€šç”¨ç‰ˆæœ¬æ¿€æ´»ç 
 3:2323:2:2:1::www.baidu.com:c4828092ad389b22fcdd568e3dd11a06
 
 
@@ -104,23 +104,23 @@ eWebEdit±à¼­Æ÷Í¨ÓÃ°æ±¾¼¤»îÂë
 
 
 
-eclipse ¿ì½İ¼ü
+eclipse å¿«æ·é”®
 http://blog.csdn.net/chenleixing/article/details/44600587
 	
 
 	
 	
-JQuery µ¯¿ò²å¼ş
+JQuery å¼¹æ¡†æ’ä»¶
 	http://www.jq22.com/demo/jqueryConfirm20160413/
 
 	
-°Ù¶ÈµØÍ¼ÃØÔ¿
+ç™¾åº¦åœ°å›¾ç§˜é’¥
 	DD279b2a90afdf0ae7a3796787a0742e
 <iframe src="<%=request.getContextPath()%>/include/uploadify/jsp/upload.jsp?moduleextend=t_wxjx_ewm&businessid=<%=bean.getId() %>&fileType=mp4" 
 	width="100%" height="300" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="auto" allowtransparency="yes">
 </iframe>
 
-Ò³ÃæuuidÉú³É´úÂë
+é¡µé¢uuidç”Ÿæˆä»£ç 
 	function uuid() {
 		var s = [];
 		var hexDigits = "0123456789abcdef";
@@ -135,7 +135,7 @@ JQuery µ¯¿ò²å¼ş
 		return uuid;
 	}
 	
-ÉÏ´«Í¼Æ¬²¢ÏÔÊ¾
+ä¸Šä¼ å›¾ç‰‡å¹¶æ˜¾ç¤º
 	<div class='am-g'>  
           <div styel="width:100px; height:100px">  
 			<img  src="" id="workPhoteImg"  />
@@ -157,7 +157,7 @@ JQuery µ¯¿ò²å¼ş
           }  
         });  
 	</script>  
-ÏŞÖÆÉÏ´«ÎÄ¼şµÄ¸ñÊ½
+é™åˆ¶ä¸Šä¼ æ–‡ä»¶çš„æ ¼å¼
 $("#imgUpload").change(function(e) {
 	var fileSize = 0;   
 		var filetypes =[".jpg",".png",".mp4"];   
@@ -175,7 +175,7 @@ $("#imgUpload").change(function(e) {
 				}   
 			}   
 			if(!isnext){   
-				alert("²»½ÓÊÜ´ËÎÄ¼şÀàĞÍ£¡");   
+				alert("ä¸æ¥å—æ­¤æ–‡ä»¶ç±»å‹ï¼");   
 				e.target.value ="";   
 				return false;   
 			}   
@@ -186,7 +186,7 @@ $("#imgUpload").change(function(e) {
 			var filePath = e.target.value;   
 			var fileSystem = new ActiveXObject("Scripting.FileSystemObject");   
 			if(!fileSystem.FileExists(filePath)){   
-				alert("¸½¼ş²»´æÔÚ£¬ÇëÖØĞÂÊäÈë£¡");   
+				alert("é™„ä»¶ä¸å­˜åœ¨ï¼Œè¯·é‡æ–°è¾“å…¥ï¼");   
 				return false;   
 			}   
 			var file = fileSystem.GetFile (filePath);   
@@ -197,23 +197,23 @@ $("#imgUpload").change(function(e) {
 		  
 		var size = fileSize / 1024;   
 		if(size>filemaxsize){   
-			alert("¸½¼ş´óĞ¡²»ÄÜ´óÓÚ"+filemaxsize/1024+"M£¡");   
+			alert("é™„ä»¶å¤§å°ä¸èƒ½å¤§äº"+filemaxsize/1024+"Mï¼");   
 			e.target.value ="";   
 			return false;   
 		}   
 		if(size<=0){   
-			alert("¸½¼ş´óĞ¡²»ÄÜÎª0M£¡");   
+			alert("é™„ä»¶å¤§å°ä¸èƒ½ä¸º0Mï¼");   
 			e.target.value ="";   
 			return false;   
 		} 
 }
 
-input±êÇ©Ö»ÄÜÊäÈëÊı×ÖÊµÏÖ
+inputæ ‡ç­¾åªèƒ½è¾“å…¥æ•°å­—å®ç°
 	<input onkeyup="value=value.replace(/[^\d]/g,'') "   
 		onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"   
 		id="integral"  name="socialVo.goods.integral">	
 
-js¸ñÊ½»¯µ±Ç°Ê±¼ä
+jsæ ¼å¼åŒ–å½“å‰æ—¶é—´
 function getFormatDate(){    
 	var nowDate = new Date();     
 	var year = nowDate.getFullYear();    
