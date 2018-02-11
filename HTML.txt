@@ -9,7 +9,6 @@ padding 内边距	不允许使用负值
 			 上下左右
 	js语法 object.style.padding="10px 5px"
 div 
-pull 测试
 jQuery
 	detach()	删除被选中元素的文本和子节点 不会 								返回被删除的文本
 	remove()	删除被选中元素的文本和子节点 同时会移除被选元素的数据和事件		返回被删除的文本
@@ -55,6 +54,8 @@ javascript
 		日期对象,返回1970年1月1日至今的毫秒数
 		布尔对象,返回1或者0
 	eval(string)	可计算某个字符串,并执行其中的JavaScript代码
+	
+	js中if条件为null/undefind/0/NaN/"" 表达式时,统统被解释为false,此外均为true
 	
 	
 		

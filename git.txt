@@ -1,3 +1,4 @@
+
 something just like this
 I've been reading books of old 
 The legends and the myths 
@@ -6,7 +7,7 @@ git 名称
 	index/stage 暂存区
 	repository 	仓库区
 	remote		远程仓库
-	
+F:/GitDownload/summary/pic/git.jpg
 git 命令
 	git add <filename> 将文件添加到暂存区	多个文件用空格分隔;
 	git commit -m "注释" 将文件提交到分支
@@ -46,10 +47,6 @@ git 命令
 			如果后者存在,则会被新建,origin是一个远程仓库的地址
 		$ git push origin :master 等同于 $ git push origin --delete master
 			 删除origin主机的master分支
-		
-		
-		
-		
 		
 		
 		
