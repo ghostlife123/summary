@@ -1,0 +1,39 @@
+win 快捷键
+	win+D 最小化所有窗口,再次按会还原所有窗口
+	alt+space+c 关闭当前程序或者窗口	非常建议使用
+	ctrl+w		关闭当前窗口
+	alt+space+x	最大化当前窗口
+	alt+space+r	还原当前窗口
+	win+space 	透明化所有窗口,查看桌面
+	win+x		打开win移动中心	笔记本才有的
+	win+数字(1-9)	按照任务栏中切换程序
+	win+L		锁定电脑
+	win+E		打开电脑资源/计算机
+	shift+delete	删除选中文件,不进入回收站
+	alt+D		选中地址栏,浏览器或者资源管理器
+	win+↑		最大化当前窗口
+	win+↓		最小化当前窗口
+	ctrl+shift+←→选中单词
+	ctrl+左右	按单词移动
+	shift+↑	↓	选中整行
+	shift+← →	选中单个字符
+
+eclipse 快捷键
+	查看一个方法被谁引用（调用）的快捷键
+		双击选中该方法，Ctrl+Alt+H 
+		选中该方法，Ctrl+Shift+G 
+		选中该方法右键 reference 
+	
+	
+shell 命令
+	appwiz.cpl			打开卸载程序窗口
+	devmgmt.msc			电脑组件界面
+	services.msc		打开服务界面
+	mstsc				打开远程界面
+	shutdown -r/-s -t	重启/关闭电脑 
+
+	
+	
+	
+	
+	

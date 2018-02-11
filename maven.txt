@@ -1,0 +1,63 @@
+本地添加jar 坐标
+mvn install:install-file 
+-DgroupId=net.sourceforge 
+-DartifactId=pinyin4j 
+-Dversion=1.1.0 
+-Dpackaging=jar 
+-Dfile=F:\JAVA\MarsWorkspace\distance\WebContent\WEB-INF\lib\pinyin4j-1.1.0.jar
+
+maven
+	maven: 	
+		一个项目对象模型	(project object model) 
+		一个项目生命周期	(Project Lifecycle)
+			各个生命周期完成独立的事情
+				clean 	周期:	清除周期;
+				default 周期:	编译,打包,install等等;
+					compile		package		install
+				site	周期:	生成站点周期;
+		一个依赖管理系统	(Dependency Management System)
+			项目jar包通过坐标依赖,工程可以相互依赖,
+			项目继承,可以让所有的子项目依赖项统一版本
+		利用插件执行构建任务
+	聚合:将多个项目同时运行
+		实现聚合用<modules>标签
+			<modules>
+				<module><module/>
+				<module><module/>
+				<module><module/>
+			<modules/>
+		聚合工程打包只需要打父工程,打包方式为pom;
+	继承:在聚合多个项目时,如果这些被聚合的项目中引入相同的jar,将这些jar写入到父的pom中
+		 各个子项目继承该pom即可
+		 实现继承
+			在子项目中pom中
+				<parent>
+					<groupId><groupId/>
+					<artifactId><artifactId/>
+					<version><version/>
+				<parent/>
+	
+	profile 属性
+		定义一系列的配置信息,指定激活条件,可以达到不同环境使用不同的配置信息效果;
+		profile 可以定义在pom.xml文件中,也可以定义在setting.xml中,全局profile是定义在setting.xml文件中
+		全局profile会影响到所有的项目或者是某个用户的所有项目
+	
+	
+		
+		
+		
+
+	子工程继承父工程的依赖,父工程把依赖放在<dependencyManagement>中管理,则子类不会自动继承父类的依赖
+		需要在子工程中引入 但父工程中必须写好版本号
+	groupId	组织或者公司唯一标志	
+	artifactId	组件 工件
+	version
+	module
+	properties 定义一些属性
+	依赖
+	插件
+	
+	
+			
+			
+			

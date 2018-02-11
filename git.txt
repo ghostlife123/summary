@@ -1,0 +1,65 @@
+something just like this
+I've been reading books of old 
+The legends and the myths 
+git 名称
+	workspace 	工作区
+	index/stage 暂存区
+	repository 	仓库区
+	remote		远程仓库
+	
+git 命令
+	git add <filename> 将文件添加到暂存区	多个文件用空格分隔;
+	git commit -m "注释" 将文件提交到分支
+	touch <filename> 新建一个文件
+	cat <filename>  查看文件内容
+	git log 查看最近3次日志
+	git log --pretty=oneline	简要信息日志
+	git reflog 查看版本号
+	git status 查看提交状态
+	git diff <filename>	查看修改的内容
+	git reset --hard HEAD^	回退到上个版本
+			  上上个版本 HEAD^^	
+			  往上一百个版本 HEAD~100
+	git reset --hard <版本号>	回退到版本号版本
+	git 撤销以及删除
+		1.撤销
+		第一种:直接修改文件,手动add到暂存区,最后commit;
+		第二种:git reset --hard HEAD^
+		第三种:在git status后,
+			可以git checkout --<filename>把filename文件在工作区做的修改全部撤销掉
+			git checkout --<filename>中 如果没有-- 就变成了创建分支
+		2.删除
+			rm <filename>	
+				需要commit 才能从版本库中彻底删除
+					git commit
+				或者可以从版本库中回复删除的文件
+					git checkout --<filename>
+	git fetch
+		1.从远程的origin仓库的master主分支更新最新的版本到origin/master分支上
+		2.比较本地的master分支和origin/master分支的差别
+		3.合并内容到本地的master分支
+	git merge	合并两个分支
+	git
+	git push <远程主机名> <本地分支名>:<远程分支名>	推送
+		$ git push origin master
+			将本地的master分支推动到origin主机的master分支,
+			如果后者存在,则会被新建,origin是一个远程仓库的地址
+		$ git push origin :master 等同于 $ git push origin --delete master
+			 删除origin主机的master分支
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	git pull
+		
+	远程仓库
+		本地生成SSH key
+		登录github 添加key
+		远程仓库的建立
+			github 上 create a new repo 创建一个新的仓库
+	

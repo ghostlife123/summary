@@ -1,0 +1,13 @@
+	web服务器,应用服务器,servlet容器
+		
+	
+	web 上下文
+		目标对象是所有web应用,
+	spring 上下文
+		目标对象是单个web应用
+	ServletContext:
+		javaEE规定servlet容器需要在应用项目启动时,给项目应用初始化一个ServletContext(上下文)存放公共信息
+	java 各种结构
+		
+	
+		

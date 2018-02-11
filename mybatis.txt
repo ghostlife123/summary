@@ -1,0 +1,25 @@
+mybatis:
+	一对一配置
+		association
+		<association property="article" column=""
+			select="selectID" />
+	一对多配置
+		collection
+		<collection property="artileList" column=""
+			select="" />
+	多对多配置
+hibernate:
+	一对多
+		inverse 指定由哪一方来维护之间的关联关系
+			默认inverse="false" --->关联关系由自己维护
+			(用的很少,暂时)
+		<set name cascade="" inverse="true">
+			<key column="dept_id"></key>
+			<one-to-many class="" />
+		</set>
+
+	
+	
+
+
+
