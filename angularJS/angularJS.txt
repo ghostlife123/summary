@@ -1,0 +1,207 @@
+
+内置指令
+	ng-app 指令初始化一个Angular JS应用程序。
+	ng-model 指令把元素值（比如输入域的值）绑定到应用程序。
+		可以为引用数据提供状态值
+			应用数据.$valid(有效的)  输入的值有效则返回true
+			应用数据.$dirty			 值改变了 返回true
+			引用数据.$touched		 通过触屏点击返回 true
+			ng-invalid 		验证失败
+			ng-dirty	 	控件输入的值已变更
+			ng-touched 		控件失去焦点
+			ng-untouched 	控件未失去焦点
+			ng-pristine		控件为初始状态(是否修改了表单 true 为未修改)
+			ng-empty		
+	ng-bind 指令把应用程序数据绑定到 HTML 视图。和{{表达式}} 一样
+			表达式可以包含字母,操作符,变量,可以写在html中,不支持条件判断,循环,以及异常,支持过滤器
+				过滤器:
+	ng-init  用来初始化引用程序的值 字符串,对象,数组都可以 通常情况下，不使用 ng-init。使用一个控制器或模块来代替它。
+	
+	ng-repeat	重复一个html元素 对于集合中(数组中)的每个项会克隆一个html元素	
+	ng-show	 	属性返回true时会显示情况										
+自定义指令:
+	使用.directive函数来添加指令app.directive
+		template:临时变量属性,存贮值,字符串之类
+		restrict:用来限制指令的调用方式,有以下几种
+			"A" 作为属性调用 
+			"E" 作为元素调用 
+			"C" 作为类名调用
+ 			"M" 作为注释调用
+		默认的调用值位 EA
+scope作用域	(Model)
+	是一个内置对象,有可用的方法和属性,可用应用在视图(HTML)和控制器上
+	使用angular JS创建控制器时 可以将$scope对象当做一个参数传递
+	scope的作用范围	自己的app内
+		所有的应用都有一个$rootScope 作用在ng-app指令包含的所有html元素中,$rootScope作用在整个应用中
+		是各个controller中scope的桥梁,使用$rootScoped定义的值 可以在各个controller中使用
+控制器	(controller)
+	应用程序被控制器控制	ng-controller 是JS对象 
+	带有$scope	还可以设置函数
+过滤器	(定义好的功能函数,直接调用)
+	过滤器可以使用管道字符(|)添加到表达式和指令中	{{lastname | uppercase}} 字符串格式转大写
+	currency 	格式化数字转为货币格式
+	filter		匹配子串(匹配字符串,相当于搜索)	可以接收 字符串,数字,对象,函数
+	lowercase	格式化字符串为小写
+	uppercase	格式化字符串为大写
+	orderBy		根据某个表达式排序数组
+	number		格式化数子,同时接受一个参数,可以指定float类型保留几位小数
+	limitTo		限制数组长度或者字符串长度	{{childrenArray | limitTo :2}}	显示数组前两位
+	自定义过滤器
+		
+服务service
+		使用服务可以使用DOM中存在的对象,但直接使用DOM中存在的对象在angularJS应用中会存在一定的局限
+		$http 		发送请求服务
+		$timeout	setTimeout函数		定时
+		$interval	setInterval函数		周期新
+		$location 	返回当前URL地址
+		自定义服务	
+			app.service('服务名称',function(){
+				this.mySer=function(x){
+					return 对x的处理
+				}
+			})
+选择框select
+	ng-options创建选择框
+	<div ng-app="myApp" ng-controller="myCtrl">
+		<select ng-init="selectName=comp[0]" ng-model="selectName" ng-options="x for x in comp">
+				
+		</select>
+	</div>
+	(x,y)	表是key-value格式数据
+	select中ng-options固定语法  	x for x in comp  会得到一个list
+	ng-options和ng-repeat的区别
+		ng-options选择的是一个对象 
+		ng-repeat选择的是一个字符串,用来创建下拉框时 需要放在<option/>中
+表格table
+	使用ng-repeat指令 通过复制行来实现
+	<table>
+		  <tr ng-repeat="x in names">
+			<td>{{$index+1}}</td>	//显示序号
+			<td>{{ x.Name }}</td>
+			<td>{{ x.Country }}</td>
+		  </tr>
+	</table>
+	$even和$odd		
+		$even	选择所以带偶数的<tr>元素
+		$odd	选择带有奇数的<tr>元素
+	
+angular JS	事件
+	ng-click	点击事件
+	ng-disabled		直接绑定应用程序到html的disabled属性
+	ng-show			隐藏或者显示一个HTML元素
+	ng-hide			隐藏HTML元素
+	
+angular JS 模块
+	模块定义了一个应用程序,是应用程序中不同部分的容器,是应用控制器的容器
+	angular.module("myApp",[]);
+
+输入验证 novalidate
+	HTML 表单属性 novalidate 用于禁用浏览器默认的验证。
+	$dirty		表单有填写记录		
+	$pristine	表单没有填写记录
+	$valid 		是否合法 合法返回true
+	$invalid	不合法 返回true
+	$error		错误输出信息	不太清楚
+angular JS 包含 
+	ng-include指令		没哟成功过
+	跨域包含:需要设置 域名访问白名单
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	单点登录的实现原理
+	
+		
