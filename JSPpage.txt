@@ -1,0 +1,45 @@
+
+JAVAEE 四大作用域	 pageContext ,request,session,ServletContext
+	http://blog.csdn.net/xu734816038/article/details/50221577
+	JSP页面中,用户创建的对象(比如javabean)和
+	jsp的隐含对象(九大内置对象和EL表达式中的隐含的对象)
+都含有一个范围(作用域),既什么时间,哪一个页面中可以访问到该对象,
+	JSP中有4种范围:
+	一.page范围	---pageContext域
+		具有page范围的对象,被绑定到 javax.servlet.jsp.PageContext 
+		对象中只能在创建对象的页面被访问,
+		page范围的对象,在客户端每次请求页面时后创建,
+		在页面向客户端发送回响或者请求转发是删除
+	二.request范围--Request域
+		对象被绑定 javax.servlet.ServletRequest 对象中,
+		调用forward()方法转向的页面
+		或者include()方法包含的页面
+		都可以访问该范围的对象,对于每一个新的请求,都要重新创建和删除该范围的对象
+		
+	三.session范围--Session域
+		对象被绑定 javax.servlet.http.HttpSession对象中
+		JSP容器为每一次会话创建一个HttpSession对象	
+		会话期间可以访问session范围的对象
+		session对象主要方法
+			getAttribute(String name) return Object
+			RemoveAttribute(String name) return void
+			setAttribute(String name,Object value) void;
+	四.application范围--ServletContext域
+			对象被绑定到 javax.servlet.ServletContext中
+			Web应用程序运行期间所有页面都能访问该范围的对象
+			
+
+	乱码 原理
+		http://blog.csdn.net/gaoxueyi551/article/details/9970611
+		对于我们所看到的字符,都是以二进制数据的形式存在的,
+		不同字符对应的二进制的规则就是字符编码,字符编码的集合称为字符集
+		JAVA 内部采用的是Unicode字符集编码来表示字符,在java语言中,不同通字符集的编码装换
+		都是通过Unicode作为中介完成的.当Unicode编码向某个字符集转换时,如果该字字符集中没有
+		对应的编码,就会得到0x3f(即?);
+		浏览器会根据系统默认的字符集提交数据,而web容易默认采用ISO-8859-1的编码方式解析Post数据,
+		
+		
+		
+		
+			
+	
