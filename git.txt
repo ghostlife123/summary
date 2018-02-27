@@ -46,6 +46,7 @@ git 命令
 			将本地的master分支推动到origin主机的master分支,
 			如果后者存在,则会被新建,origin是一个远程仓库的地址
 		$ git push origin :master 等同于 $ git push origin --delete master
+			冲突测试
 			 删除origin主机的master分支
 		
 		
