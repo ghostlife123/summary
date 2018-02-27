@@ -1,13 +1,66 @@
-LPAD函数: 左边对字符串使用指定的字符进行填充
-	lpad(string,padded_length,[pad_string])
-		string 	准备被填充的字符
-		padded_length	填充之后的字符串长度,该函数返回的字符串长度
-						如果比原来的长度要段,则会把字符串截取成从左到右的n个字符
-		pad_string		填充字符,如果未写,则将string左边黏贴空格
-NVL函数	
-	NVL(string,replace_with)	如果string为null值,则返回replace_with,不能null则返回string
-								都为null则返回null
-						string和replace_with类型一致
+常用函数
+	单行函数:只处理单个行,并且为每行返回一个结果
+		1.字符函数
+			1)LPAD函数: 左边对字符串使用指定的字符进行填充
+				lpad(string,padded_length,[pad_string])
+					string 	准备被填充的字符
+					padded_length	填充之后的字符串长度,该函数返回的字符串长度
+									如果比原来的长度要段,则会把字符串截取成从左到右的n个字符
+					pad_string		填充字符,如果未写,则将string左边黏贴空格
+			
+			2)NVL函数	
+				NVL(string,replace_with),则返回replace_with,不为null则返回string
+					都为null则返回null  string和replace_with类型一致
+				NVL2(x,value1,value2) 如果x不为null返回value1,否则返回value2
+			
+			3)concat函数
+				CONCAT(str1,str2)字符串拼接 等价于 || 
+				select concat('Hello','world') from dual;
+				select 'Hello' || 'World' from dual;
+			
+			4)initcap(str) 将每个单词首字母大写,其他字母小写
+				select initcap('hello world') from dual ----返回Hello World
+				select initcap('HELLO WORLD') from dual ----返回Hello World
+			
+			5)instr(x,find_string[,start][,occurrence])
+				返回指定字符串在某字符串中的位置,
+				可以指定搜索的开始位置和返回第几次搜索出来的结果
+			
+			6)trim,ltrim,rtrim			
+				ltrim(x[,trim_string])	从左侧去除指定字符串
+								
+				rtrim(x[,trim_string])	从右侧去除指定字符串
+										
+				trim(trim_string from x)从字符串两侧去除指定所有字符串
+				
+			7)replace(x,search_string,replace_string)
+				从字符串x中搜索search_string字符串,并且使用replace_string字符串替换
+				并不会修改数据库中原始值
+			
+			8)substr(x,start[,length])返回字符串中的指定字符,
+				这些字符从字符串的第start位置开始,长度为length个字符;
+				如果start是负数,则从x字符串的末尾开始算起
+				如果length省略,则返回一直到字符串末尾的所有字符
+		2.数值函数
+		3.格式化函数
+			https://www.cnblogs.com/aipan/p/8080151.html
+			http://www.jb51.net/article/53639.htm
+			to_data,
+			to_char,
+				extract(): 
+					从一个日期里面截取year,month,day(data的格式为yyyy-MM-dd)
+						extract(minute from date'yyyy-MM-dd')
+					获取两个日期之间的时间间隔
+						extract(minute from date1-date2)
+					
+			to_number
+		4.日期函数
+			
+	聚集函数:
+		1.常用函数
+		2.对分组使用聚集函数
+		3.
+
 
 union all
 
@@ -47,9 +100,9 @@ instr()函数和like关键字的区别
 	wmsys.wm.concat(name)
 OVER() 			分析函数
 row_number()    分析函数
-		
+
 触发器和级联操作的区别
-	触发器的可以实现级联操作, 但效率比级联操作低
+	触发器的可以实现hibernate的级联操作, 但效率比级联操作低
 	触发器的作用在于控制:	操作灵活
 		
 视图	
@@ -74,7 +127,7 @@ row_number()    分析函数
 		[ with check option ]
 		[ constraint constraint_name ]
 		[ with read only ]
-	
+		
 		force::"强制"创建视图,不考虑基表是否存在,也不考虑是否具有基表的使用权限
 		with check option:指定对视图执行dml操作时满足"视图子查询"
 			视图子查询:对通过视图进行增删改操作进行"检查",要求增删改数据,必须是select查询所能查询到的数据
@@ -86,11 +139,26 @@ row_number()    分析函数
 		只能使用连接视图定义过的列
 		"自连接视图"的所有列都是可更新的
 		insert操作的视图至少"包含"键值保存表中所设置了约束的列
+
+存贮过程
+
+存贮函数		
 		
 		
-		
-		
-		
+oracle使用
+	https://www.cnblogs.com/adforce/p/3312252.html
+	http://blog.csdn.net/u013412772/article/details/52733050
+	select * from dba_users		查询数据库用户
+	sqlplus  "sys/密码@数据库服务名 as sysdba"这样写在cmd中就可以以DBA身份登陆了
+
+	表空间(tablespace):oracle通过表空间来存储物理表,
+	一个数据库实例可以有N个表空间,一个表空间可以有N张表
+	创建的用户必须指定表空间,一个用户只能指定一个表空间
+
+
+	
+	
+	
 		
 		
 	
