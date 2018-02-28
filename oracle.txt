@@ -7,7 +7,7 @@
 					padded_length	填充之后的字符串长度,该函数返回的字符串长度
 									如果比原来的长度要段,则会把字符串截取成从左到右的n个字符
 					pad_string		填充字符,如果未写,则将string左边黏贴空格
-			
+			decode+lpad函数实现主键自增 并在前面补0
 			2)NVL函数	
 				NVL(string,replace_with),则返回replace_with,不为null则返回string
 					都为null则返回null  string和replace_with类型一致
@@ -55,56 +55,122 @@
 					
 			to_number
 		4.日期函数
-			
+			sysdate			当前日期和时间	select sysdate from table_name
+			last_day		本月最后一天	select last_day(sysdate) from table_name
+			add_months(d,n)	当前日期后推n个月	select add_months(sysdate,2) from table_name
+			months_between(d,n)
+					日期d和n相差月数
+			##这个函数有点问题↓↓↓↓↓↓↓↓↓↓
+			next_day(d,day) d后第一周指定day的日期select next_day(sysdate,'Monday') from table_name
+			还有一些特殊格式的日期函数
 	聚集函数:
 		1.常用函数
 		2.对分组使用聚集函数
 		3.
+	其他函数:
+	
+		列转行函数
+			WMSYS.WM.CONCAT 可以用来拼接列,排序是不规则的,11g不能用了 似乎 
+			listagg(T.ENAME,',')  within group (order by T.EMPNO) CONCAT FROM EMP T	 建议使用这个做列转行
+		decode函数
+			decode(条件,值1,返回值1,值2,返回值2...,"缺省值 可以省略");
+			decode(字段或者字段运算,值1,值2,值3)
+				字段或者运算==值1时 返回值2 否则返回值3	值1 值2 值三可以为表达式
+		sign()函数	根据某个值是0还是正数 负数 返回0 1 -1
+			判断2个值的大小 返回小值
+				select decode(sign(变量1-变量2),-1,变量1,变量2)
+			decode+lpad函数实现主键自增 并在前面补0
+				
+				union all
+		递归函数(不理解)
+			start with 条件 connect by (nocycle) prior id=parent_id 向下递归
+			start with 条件 connect by (nocycle) prior parent_id=id 向上递归
+			后面可以加where条件 但是条件实是在递归结束后执行 
+			connect_by_root(列名)	查询根节点
+			connect_by_isleaf		查询是否叶子节点 0是 1不是
+			sys_connect_by_path(name,'符号0000')		查询递归路径
+				注意不能使用逗号,如果要使用,需要用replace处理
+				使用该函数必创建一个树 否则无用
+			nocycle 关键字忽略掉
+		instr()函数和like关键字的区别
+			instr()用法:
+				instr(name,'aaa')>0		相当于 name like '%aaa%'
+				instr(name,'aaa')=1		相当于 name like 'aaa%'
+				instr(name,'aaa')<0		相当于 name not like '%aaa%'
+			在数据量很大是 使用instr()函数的查询效率比使用like高很多,oracle中的函数是做过一些优化的
+			所以,建议使用函数去执行操作,instr()代替like是常用用法之一
+			其他还有
+				instr(sourceString,destString,startIndex,apperPosition)	返回查找到的字符串的index
+						startIndex	可以为负 表示从右边开始查询,但返回index依然从左边计算
+						apperPosition 默认为1 可以指定;
+		分析函数
+			OVER() 			分析函数
+			row_number()    分析函数
+						
 
-
-union all
-
-decode函数
-	decode(条件,值1,返回值1,值2,返回值2...,"缺省值 可以省略");
-	decode(字段或者字段运算,值1,值2,值3)
-		字段或者运算==值1时 返回值2 否则返回值3	值1 值2 值三可以为表达式
+						
 sign()函数	根据某个值是0还是正数 负数 返回0 1 -1
 	判断2个值的大小 返回小值
 		select decode(sign(变量1-变量2),-1,变量1,变量2)
-	decode+lpad函数实现主键自增 并在前面补0
-递归函数
 	
-	start with 条件 connect by (nocycle) prior id=parent_id 向下递归
-	start with 条件 connect by (nocycle) prior parent_id=id 向上递归
-	后面可以加where条件 但是条件实是在递归结束后执行 
-	connect_by_root(列名)	查询根节点
-	connect_by_isleaf		查询是否叶子节点 0是 1不是
-	sys_connect_by_path(name,'符号0000')		查询递归路径
-		注意不能使用逗号,如果要使用,需要用replace处理
-		使用该函数必创建一个树 否则无用
-	nocycle 关键字忽略掉
-instr()函数和like关键字的区别
-	instr()用法:
-		instr(name,'aaa')>0		相当于 name like '%aaa%'
-		instr(name,'aaa')=1		相当于 name like 'aaa%'
-		instr(name,'aaa')<0		相当于 name not like '%aaa%'
-	在数据量很大是 使用instr()函数的查询效率比使用like高很多,oracle中的函数是做过一些优化的
-	所以,建议使用函数去执行操作,instr()代替like是常用用法之一
-	其他还有
-		instr(sourceString,destString,startIndex,apperPosition)		返回查找到的字符串的index
-				startIndex	可以为负 表示从右边开始查询,但返回index依然从左边计算
-				apperPosition 默认为1 可以指定;
-	
-	WMSYS.WM.CONCAT 可以用来拼接列,排序是不规则的,							 11g不能用了 似乎 
-	listagg(T.ENAME,',')  within group (order by T.EMPNO) CONCAT FROM EMP T	 建议使用这个做列转行 
-	wmsys.wm.concat(name)
-OVER() 			分析函数
-row_number()    分析函数
 
-触发器和级联操作的区别
-	触发器的可以实现hibernate的级联操作, 但效率比级联操作低
-	触发器的作用在于控制:	操作灵活
+
+触发器:
+	https://www.cnblogs.com/sharpest/p/7764662.html
+	某个条件成立的时候,触发器里面所定义的会自动被执行
+	语法:
+		create [or replace] tigger 触发器名 触发时间,触发事件
+		on 表名
+		[for each row]
+		begin
+		pl/sql语句
+		end
+	触发时间:指明触发器何时执行
+		before:
+		after:
+	触发事件:
+		insert
+		update
+		delete
+	[for each row]:对表的每一行执行一次
+	触发器实现自增
+		create sequence my_seq increment by 1 start with 1 nomaxvalue nocycle cache 20;
+		CREATE OR REPLACE TRIGGER MY_TGR
+			BEFORE INSERT ON TAB_USER
+			FOR EACH ROW--对表的每一行触发器执行一次
+		DECLARE
+			NEXT_ID NUMBER;
+		BEGIN
+			SELECT MY_SEQ.NEXTVAL INTO NEXT_ID FROM DUAL;
+			:NEW.ID := NEXT_ID; --:NEW表示新插入的那条记录
+		END;
+	
+	触发器和级联操作的区别
 		
+		触发器的可以实现hibernate的级联操作, 但效率比级联操作低
+		触发器的作用在于控制:	操作灵活
+sequence 序列
+	http://blog.itpub.net/28878983/viewspace-2138662/
+	序列号生成器,表中的行自动生成序列号产生一组等间隔的数值(类型为数字)不占用磁盘空间,占用内存
+	创建序列
+		create sequence 序列名
+		[increment by n]	定义序列的步长,省略默认为1,负值表示递减
+		[start with n]		序列初始值,默认为1
+		[{maxvalue/ minvalue n| nomaxvalue}] nomaxvalue是默认,代表没有最大值定义,10的27次方
+		[{cycle|nocycle}]	到达最大值是否循环,循环从最大值到最小值,不循环到最大值是发生错误
+		[{cache n| nocache}] 存放序列内存块大小,默认20
+		nextval 返回序列中下一个有效值,任何用户都可以应用
+		currval 中存放列的当前值,nextval应该在currval之前指定,两者同时有效
+	使用序列
+		sequence.nextval
+		insert into t1 values(t1_seq.nextval,1,1);
+	修改序列(必须是序列的拥有者或者对序列有修改权限)
+		alter any sequence
+		只有将来的序列值会被改变
+		改变序列初始值只能删除序列后重建序列的方法实践
+	查询序列
+		user_objects查看用户拥有的序列
+		user_sequences查看序列的设置
 视图	
 	强大之处它能够根据不同用户的需要来对基表中的数据进行整理
 	with read only
@@ -140,14 +206,27 @@ row_number()    分析函数
 		"自连接视图"的所有列都是可更新的
 		insert操作的视图至少"包含"键值保存表中所设置了约束的列
 
-存贮过程
-
-存贮函数		
-		
-		
+存储过程
+	能少用就少用
+存储函数		
+	能少用就少用
+	
+pl/sql语句
+	任何变量使用前必须申明
+	declare
+	http://blog.csdn.net/wahaa591/article/details/46648365
+	
+	
+	
+	
+	
+	
+	
+	
 oracle使用
 	https://www.cnblogs.com/adforce/p/3312252.html
 	http://blog.csdn.net/u013412772/article/details/52733050
+	http://blog.csdn.net/u011955534/article/details/14129483
 	select * from dba_users		查询数据库用户
 	sqlplus  "sys/密码@数据库服务名 as sysdba"这样写在cmd中就可以以DBA身份登陆了
 
@@ -158,12 +237,6 @@ oracle使用
 	数据库中文乱码
 		设置环境变量名：NLS_LANG，变量值：SIMPLIFIED CHINESE_CHINA.ZHS16GBK
 	
-	
-	
-		
-		
-	
-
 http://blog.csdn.net/u013120247/article/details/51542988
 
 
