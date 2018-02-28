@@ -155,7 +155,8 @@ oracle使用
 	一个数据库实例可以有N个表空间,一个表空间可以有N张表
 	创建的用户必须指定表空间,一个用户只能指定一个表空间
 
-
+	数据库中文乱码
+		设置环境变量名：NLS_LANG，变量值：SIMPLIFIED CHINESE_CHINA.ZHS16GBK
 	
 	
 	
