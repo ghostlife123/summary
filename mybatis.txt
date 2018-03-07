@@ -18,6 +18,11 @@ hibernate:
 			<one-to-many class="" />
 		</set>
 
+#{}和${}区别：
+parameterType，resultType，resultMap之间的关系
+
+
+	
 	
 	
 
