@@ -1,3 +1,6 @@
+分布式 了解一下
+http://www.cnblogs.com/zengkefu/p/5742617.html
+
 	dubbo分布式服务框架
 		角色:
 			暴露服务的提供方

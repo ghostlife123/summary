@@ -48,8 +48,9 @@ git 命令
 		$ git push origin :master 等同于 $ git push origin --delete master
 			456
 			 删除origin主机的master分支
-		
-		
+		git 若不更新 直接推送,项目会产生一个分支
+			
+	
 		
 		
 		
