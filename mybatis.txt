@@ -6,6 +6,7 @@ mybatis:
 	一对多配置
 		collection
 		<collection property="artileList" column=""
+		
 			select="" />
 	多对多配置
 hibernate:
@@ -19,7 +20,18 @@ hibernate:
 		</set>
 
 #{}和${}区别：
+	mybatis对sql进行预编译之前，会对sql进行动态解析，
+	#{}被解析为,占位符，当成一个字符串，${}解析成sql语句拼接，比如
+		seletc * from student where id=#{id}---->select * from student where id='1'
+		select * from student where id=${id}---->select * from student where id=1
+	#{} 能有效防止sql注入，	${}无法防止sql注入
+	$一般用于传入数据库对象，比如表民，排序字段(order by ${columnName})
+	
+	
+	
 parameterType，resultType，resultMap之间的关系
+
+
 
 
 	
