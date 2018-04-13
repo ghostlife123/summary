@@ -8,13 +8,49 @@ padding 内边距	不允许使用负值
 	padding: 10px
 			 上下左右
 	js语法 object.style.padding="10px 5px"
-div 
+	
 jQuery
 	detach()	删除被选中元素的文本和子节点 不会 								返回被删除的文本
 	remove()	删除被选中元素的文本和子节点 同时会移除被选元素的数据和事件		返回被删除的文本
 	empty()	删除被选中元素的子节点
 	append()和html()的区别
 	html是替换，而append是追加
+jquery 操作dom
+	选择器：
+		元素选择器:
+			$("p")   选择<p>元素
+			$("p.intro") 选择<p>中 class="intro"的元素
+			$("p#demo")  选择<p>中 id="demo"的元素
+		属性选择器
+		css选择器
+			$("p").css("background-color","red");
+	效果:
+		隐藏元素:
+			css:
+				opacity=0;	透明度,
+					元素依然占据位置,对布局器作用,影响用户交互
+				visibility=hidden;
+					素依然占据位置,对布局器作用,
+					如果需要让子元素显示出来,将那个元素的属性设置为visible 
+					不影响用户交互
+				display=none
+					真正的隐藏元素,盒子模型都不存在
+					子元素同事被隐藏
+					对这个元素的直接用户操作是不生效的
+					但依然可以通过DOM访问到这个元素
+				position=absolute,然后将位置设置到一个不可见的区域
+					top:-9999px;
+					left:-9999px;
+			jQuery:
+				hide(),show();
+					可以设置时间,拥有回调函数
+				toggle(speed,callback,switch);	
+					如果被选元素可见，则隐藏这些元素，如果被选元素隐藏，则显示这些元素。
+					switch:如果设置此参数，则无法使用 speed 和 callback 参数
+				
+		
+				
+		
 javascript
 	运算符
 		typeof:

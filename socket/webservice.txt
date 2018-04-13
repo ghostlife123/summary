@@ -1,0 +1,11 @@
+	https://blog.csdn.net/yangwenxue_admin/article/details/51059125
+	webservice
+		基本概念:
+			一个独立的平台,低耦合,自包含的应用程序;
+			通过soap在web上提供的软件服务,使用WSDL文件说明,并通过UUID进行注册;
+			XML
+			SOAP
+			WSDL
+			UUID
+		调用原理:
+			
