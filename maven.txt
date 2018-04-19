@@ -57,7 +57,40 @@ maven
 	依赖
 	插件
 	
+	修改默认JDK版本
 	
-			
+	方式一：settings.xml 配置
+		打开 %maven%/conf/settings.xml 文件并编辑它（%maven% 表示 maven 的根目录） ：
+		<profiles>
+		  <profile>
+			<id>development</id>
+			<activation>
+			  <jdk>1.7</jdk>
+			  <activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+			  <maven.compiler.source>1.7</maven.compiler.source>
+			  <maven.compiler.target>1.7</maven.compiler.target>
+			  <maven.compiler.compilerVersion>1.7</maven.compiler.compilerVersion>
+			</properties>
+		  </profile>
+		</profiles>
+		找到 <profiles> 节点，并添加如上配置（本机 jdk 1.7.0_79 版本，配置时修改成你本机的 jdk 版本）。
+		保存并关闭。重启 eclipse 即可。重启后配置生效。
+	方式二：pom.xml 配置
+		在 <build> 节点添加如下配置（本机 jdk 1.7.0_79 版本，配置时修改成你本机的 jdk 版本）：
+		<build>
+		  <plugins>
+			<plugin>
+			  <groupId>org.apache.maven.plugins</groupId>
+			  <artifactId>maven-compiler-plugin</artifactId>
+			  <configuration>
+				<source>1.7</source>
+				<target>1.7</target>
+			  </configuration>
+			</plugin>
+		  </plugins>
+		</build>
+		update project	
 			
 			

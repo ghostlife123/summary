@@ -206,18 +206,111 @@ sequence 序列
 		"自连接视图"的所有列都是可更新的
 		insert操作的视图至少"包含"键值保存表中所设置了约束的列
 
-存储过程
-	能少用就少用
-存储函数		
-	能少用就少用
+存储函数(能少用就少用)
+	有返回值,返回值类型在创建函数时就定义
+存储过程(能少用就少用)
+	一个问题PL/SQL程序块,无返回值,不能由SQL语句直接使用,只能通过execut命令,或者PL/SQL程序块内部调用
 	
+游标cursor
+	在PL/SQL执行select insert delete update 语句时,oracle会在内存中为其分配上下文区(context area),
+即缓冲区,游标是指向该区的一个指针或是命名一个工作区(work area),或者是一种结构化的数据类型
+提供一种对查询结果集中每一行数据分别进行单独处理的方法,
+	显式游标:
+		
+	隐式游标:
 pl/sql语句
 	任何变量使用前必须申明
 	declare
+	http://blog.csdn.net/u012414590/article/details/69397683
 	http://blog.csdn.net/wahaa591/article/details/46648365
-	
-	
-	
+	基本结构:块头,声明单元,执行单元,异常处理单元
+		PROCEDURE get_happy (ename_in IN VARCHAR2)    		 -- 块头:命名块才有这个单元,块头确定命名块获取程序的调用方式,
+		IS
+			l_hiredate    DATE;    		  -- 声明单元:定义变量,游标,以及可以被后面执行单元或者异常单元应用的子单元,
+		BEGIN
+			l_hiredate := SYSDATE - 2;
+			INSERT INTO employee (emp_name, hiredate) VALUES (ename_in, l_hiredate);-- 执行单元:执行的业务逻辑,
+		EXCEPTION
+			WHEN DUP_VAL_IN_INDEX THEN    -- 异常处理单元:跑出异常
+			DBMS_OUTPUT.PUT_LINE('Cannot insert.');
+		END;
+		
+		变量声明
+			variable_name datatype [:=expression];
+			直接声明变量	s_id number;
+			赋值声明变量	s_id number := 1;
+			%TYPE			专门为存储在数据列中检索到的值而创建的,对于使用%TYPE创建的变量,数据类型由系统根据检索的数据列的数据类型决定
+			%ROWTYPE		可以一次存储从数据库检索的一行数据.
+		if条件控制语句
+			if condition1 then
+				statements1;
+			elseif condition2 then
+				statements2
+			else
+				statements3;
+			end if;
+		case 控制语句
+			cese s_id
+			when value1/exp2 then
+				statements1
+			when value2/exp2 then
+				statements2
+			end;
+		循环语句
+			简单循环loop:	loop开头 end loop结尾 exit when 指定条件退出
+				declare 
+					value number := 1;
+				begin
+					loop
+						i := i+1;
+						dbms_output.put_line(i);
+						exit when i=100;
+					end loop;
+				end
+			for循环
+				数值型:循环用的index 无需在块中声明,但必须指定起始值和终点值,中间用 空额..空格 隔开
+					declare
+						i number := 1;
+					begin 
+						for x in i .. 100
+						loop
+							dbms_output.put_line(x);
+							exit when x=50;
+						end loop;
+					end;
+						
+				游标型:
+					用于对一个查询的结果进行处理,用于替代查询结果中每一行的记录的变量(rec),
+					无需在块声明中声明
+						begin
+							for rec in (select * from hr.parents);
+							loop
+								dbms_output.put_line(rec.person_id);
+								end with rec.somethingelse;
+							end loop;
+						end;
+			while循环
+				declare
+					i number := 1;
+				begin 
+					while i<100
+					loop
+						dbms_output.put_line(i);
+					end loop;
+				end;
+		continue于exit
+			continue
+				跳出本次循环,继续下一次循环判断.
+			exit
+				退出整个循环,
+		
+		
+		
+		
+		
+		
+		
+		
 	
 	
 	

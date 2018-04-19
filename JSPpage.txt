@@ -39,7 +39,7 @@ JAVAEE 四大作用域	 pageContext ,request,session,ServletContext
 		浏览器会根据系统默认的字符集提交数据,而web容易默认采用ISO-8859-1的编码方式解析Post数据,
 		
 		
-		
+	${sessionScope.user.username }
 		
 			
 	

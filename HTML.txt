@@ -8,7 +8,17 @@ padding 内边距	不允许使用负值
 	padding: 10px
 			 上下左右
 	js语法 object.style.padding="10px 5px"
-	
+border	边框
+	宽度,样式,颜色
+	CSS规范指出,边框绘制在"元素背景之上"
+	css2规范指出,背景只延伸到内边距
+	CSS2.1 进行了更正：元素的背景是内容、内边距和边框区的背景
+	border-style:outset(凸起按钮);
+		border-top-style
+		border-right-style
+		border-bottom-style
+		border-left-style
+div 
 jQuery
 	detach()	删除被选中元素的文本和子节点 不会 								返回被删除的文本
 	remove()	删除被选中元素的文本和子节点 同时会移除被选元素的数据和事件		返回被删除的文本
@@ -93,6 +103,13 @@ javascript
 	
 	js中if条件为null/undefind/0/NaN/"" 表达式时,统统被解释为false,此外均为true
 	
+	
+	
+	js	常见异常
+		Unexpected token in JSON at position
+			Unexpected token < in JSON at position		------>  返回的是html 或者xml(自己猜的)不是json 
+			出现这个异常,根本原因只有一个----json解析异常,直接找返回的json内容和内容格式是否正确
+			
 RGB颜色0-255
 	加色法,显示屏是一个光源,本身可以发出红,绿,蓝三种颜色光线,通过调节红,绿,蓝三种颜色
 强度,来合成其他.

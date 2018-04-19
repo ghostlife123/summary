@@ -31,6 +31,12 @@ hibernate:
 	
 parameterType，resultType，resultMap之间的关系
 
+mybatis 分页:
+	物理分页:查询数据库,返回指定条数的结果
+	逻辑分页:查询数据库,将全部结果返回到一个list中,再通过索引获取指定的范围数据
+	基于Mybatis拦截器实现的物理分页,mybatis默认支持的分页是逻辑分页,
+		
+
 
 
 
