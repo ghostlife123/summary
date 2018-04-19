@@ -69,8 +69,24 @@ git 命令
 		git stash list 查看暂存列表
 		git stash pop statsh{id)或者git stash apply 还原暂存内容
 		
-		
-		
+	git 分支
+		基础操作:
+			git branch 				查看分支
+			git branch -r			查看远程分支
+			git branch -a 			查看本地和远程分支
+			git branch -f name		创建name分支但不切换
+			git checkout -b name	创建name分支 并且切换到name分支
+			git checkout name		切换到name分支
+			git branch -d name		删除name分支
+			git branch -d -r name	删除远程name分支,删除后，还要推送到服务器上才行，即git push origin :<branchname>
+		合并分支
+			合并本地分支:将age分支合并到name分支,
+				先切换到需要合并到的分支上面,然后合并需要合并的分支
+				git checkout name;
+				git merge age;
+			合并远程分支:
+			创建远程分支:
+				先创建本地分支,然后推送到远程
 	
 		
 		
