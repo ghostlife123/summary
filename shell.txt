@@ -19,10 +19,7 @@ win 快捷键
 	shift+← →	选中单个字符
 
 eclipse 快捷键
-	查看一个方法被谁引用（调用）的快捷键
-		双击选中该方法，Ctrl+Alt+H 
-		选中该方法，Ctrl+Shift+G 
-		选中该方法右键 reference 
+	查看一个方法被谁引用（调用）的快捷键:Ctrl+Alt+H 
 	
 	
 shell 命令

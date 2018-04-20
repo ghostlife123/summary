@@ -1,3 +1,4 @@
+css属性
 padding 内边距	不允许使用负值
 	padding: 10px 5px 15px 20px 
 			 上	 右	  下   左
@@ -13,11 +14,49 @@ border	边框
 	CSS规范指出,边框绘制在"元素背景之上"
 	css2规范指出,背景只延伸到内边距
 	CSS2.1 进行了更正：元素的背景是内容、内边距和边框区的背景
-	border-style:outset(凸起按钮);
+	border-style:{
+		outset:凸起按钮,insert:嵌入边框,
+		dotted:点线边框,dashed:虚线边框,
+		solid:实现
+	}outset(凸起按钮),insert(),ridge ,
 		border-top-style
 		border-right-style
 		border-bottom-style
 		border-left-style
+accesskey:
+	支持标签:
+		<a>, <area>, <button>, <input>, <label>, <legend> 以及 <textarea>
+	作用:定义激活元素快捷键,触发光标点击事件
+	案例:
+		<form>
+			<label for="name">用户名</label>
+			<input type="text" name="name" accesskey="c" id="name" />
+			<br/>
+			<a href='./show.php' accesskey="h">去我的主页</a>
+		</form>
+		shift+alt+c :光标聚集在input框内
+		shift+alt+h :页面跳转到a标签的地址
+标签:
+	块状元素:<div> <p> <h1>.....<h6> <ol> <ul> <dl> <table> <address> <blockquote> <form>
+		特点:display:block;
+			每个块状元素都从新的一行开始,且其后面元素也另起一行
+			元素高度,宽度,行高以及顶和底边距都可以设置
+			元素宽度不设置的情况下,是他本省父容器的100%,除非设定一个高度 
+	行内元素:<a> <span> <br> <i> <em> <strong> <label> <q> <cite> <code> <var>
+		特点:display:inline
+			和其他元素都在一行;
+			元素高度,宽度,顶部,底部边距不可设置
+			元素的宽度就是它包含文字或图片的宽度,不可改变
+	行内块状元素:<img> <input>
+		特点:display:inline-block
+			和其他元素都在一行上
+			元素高度,宽度,行高以及顶底边距可以设置
+	
+label 关联表单元素
+	for:绑定标签
+	当鼠标点击label标签时,触发点击它绑定的标签效果,来增强用户体验
+	
+
 div 
 jQuery
 	detach()	删除被选中元素的文本和子节点 不会 								返回被删除的文本
