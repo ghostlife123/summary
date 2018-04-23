@@ -89,9 +89,10 @@ git 命令
 				git checkout name;
 				git merge age;
 			合并远程分支:
+				
 			创建远程分支:
 				先创建本地分支,然后推送到远程
-	
+				
 		
 		
 命令git	
