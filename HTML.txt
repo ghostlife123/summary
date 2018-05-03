@@ -110,9 +110,6 @@ javascript
 			内部对象:	
 				11大内置对象:Array,Boolean,Date,Function,Global,Math,Number,
 							 Object,RegExp,Error,String
-				
-						
-						
 			生成的对象,	 
 				创建对象:
 					方式一:
@@ -134,16 +131,39 @@ javascript
 	window.prompt("",x)   
 		用于显示可提示用户输入的对话框
 		方法返回x 即用户输入的内容
-	Number(object)	将对象的只转为数字,
-		无法转换成数字,则返回NaN
-		日期对象,返回1970年1月1日至今的毫秒数
-		布尔对象,返回1或者0
+	
 	eval(string)	可计算某个字符串,并执行其中的JavaScript代码
 	
 	js中if条件为null/undefind/0/NaN/"" 表达式时,统统被解释为false,此外均为true
 	
+	js  基础知识
 	
-	
+	js 	函数
+		Number(object)	将对象的值转为数字,
+			无法转换成数字,则返回NaN
+			日期对象,返回1970年1月1日至今的毫秒数
+			布尔对象,返回1或者0
+		with(object){statements;}	
+			简介:方便引用某个特定对象中已有的属性,单不能给对象添加属性
+			参数:
+				object		新的默认对象
+				statements	一个或多个语句,object是该语句的默认对象
+			案例:
+				ex1:
+					x = Math.cos(3 * Math.PI) + Math.sin(Math.LN10) ;
+					y = Math.tan(14 * Math.E);
+				ex2:
+					with (Math){ 
+						x = cos(3 * PI) + sin (LN10); 
+						y = tan(14 * E);
+					}
+				ex3:
+					with(document){
+						write('fileSize='+fileSize);
+						title='My title';
+						bgColor='teal';
+					}
+		
 	js	常见异常
 		Unexpected token in JSON at position
 			Unexpected token < in JSON at position		------>  返回的是html 或者xml(自己猜的)不是json 
