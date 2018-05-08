@@ -1,8 +1,34 @@
 	web服务器,应用服务器,servlet容器
+		https://blog.csdn.net/tjiyu/article/details/53148174
+		
+		
 		
 	
+	
+
+
+
+	
 	web 上下文
-		目标对象是所有web应用,
+		一.	<context-param></context-param>
+			<listener></listener>
+				可以自定义监听类,实现下面借口就可以了
+				ServletContextListener：用于监听Web的启动及关闭
+				ServletContextAttributeListener：用于监听ServletContext范围内属性的改变
+				ServletRequestListener：用于监听用户请求
+				ServletRequestAttributeListener：用于监听ServletRequest范围属性的改变
+				HttpSessionListener：用于监听用户session的开始及结束
+				HttpSessionAttributeListener：用于监听HttpSession范围内的属性改变
+			当tomcat启动时,tomcat读取web.xml配置;当读到context-param,listener这两个节点时,tomcat会将
+			这两个节点set到ServletContext(上下文对象)中,这样我们就能在程序中通过上下文对象去取得我们的这个配置
+			<init-param>和<context-param>区别:
+				init-param 是放在某一个servlet里面的,这个参数只针对该servlet有效;
+				context-param 针对整个项目,所有的servlet都可以取得使用
+		二. filter	过滤器
+			1.实现:实现Filter借口
+			2.配置过滤器之后,所有的请求都会经过doFilter()方法,用FilerChain.doFilter()放行;
+			
+			
 	spring 上下文
 		目标对象是单个web应用
 	ServletContext:
