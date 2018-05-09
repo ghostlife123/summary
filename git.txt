@@ -52,6 +52,7 @@ git 命令
 	
 	git stash 暂存(可以利用解决冲突)
 		$git stash----->git pull---->git stash pop stash@{0}---->编辑冲突---->提交代码------>git stash drop stash@{0} 清除暂存
+		git stash list 查看暂存列表
 		进阶 命令
 		git stash save "work in progress for foo feature"
 		
