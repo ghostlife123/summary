@@ -23,6 +23,15 @@ border	边框
 		border-right-style
 		border-bottom-style
 		border-left-style
+positio  定位
+	absolute	绝对定位,相对于static定位以外的第一个父元素进行定位;元素位置通过left,top,right,bottom属性进行规定
+	fixed		绝对定位,相对于浏览器窗口进行定位;
+	relative	相对定位,相对其正常位置进行定位;
+	inherit		继承父元素定位
+	static		无定位
+text
+	text-indent:首行缩进;可以为负值
+
 accesskey:
 	支持标签:
 		<a>, <area>, <button>, <input>, <label>, <legend> 以及 <textarea>
@@ -51,12 +60,13 @@ accesskey:
 		特点:display:inline-block
 			和其他元素都在一行上
 			元素高度,宽度,行高以及顶底边距可以设置
-	
+	<ul>标签:定义无序列表
+	<ol>标签:定义有序列表
 label 关联表单元素
 	for:绑定标签
 	当鼠标点击label标签时,触发点击它绑定的标签效果,来增强用户体验
 	
-
+	
 div 
 jQuery
 	detach()	删除被选中元素的文本和子节点 不会 								返回被删除的文本
